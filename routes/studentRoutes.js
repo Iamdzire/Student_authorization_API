@@ -1,6 +1,6 @@
-const express = require('express')
+import express from 'express'
 
-const {createStudent, getSingleStudent, updateStudent, deleteStudent} = require('../controller/studentController.js')
+import {createStudent, getSingleStudent, updateStudent, deleteStudent} from '../controller/studentController.js'
 
 
 const studentRoute = express.Router()
@@ -10,4 +10,4 @@ studentRoute.get('/get-single/:id', getSingleStudent)
 studentRoute.patch('/update/:id', updateStudent)
 studentRoute.delete('/delete/:id', deleteStudent)
 
-module.exports = studentRoute
+export default studentRoute

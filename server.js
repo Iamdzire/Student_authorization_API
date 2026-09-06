@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
-const express = require('express')
-const studentRoute = require('./routes/studentRoutes.js')
+import mongoose from 'mongoose'
+import express from 'express'
+import studentRoute from './routes/studentRoutes.js'
 
 const compass_string = "mongodb://localhost:27017/students_db"
 

@@ -1,6 +1,6 @@
-const studentModel = require('../model/studentModel.js')
+import studentModel from '../model/studentModel.js'
 
-const createStudent = async(req, res) => {
+export const createStudent = async(req, res) => {
     try {
         const {Name, Reg_No, Password} = req.body
         const student = await studentModel.create({
@@ -19,7 +19,7 @@ const createStudent = async(req, res) => {
 
 
 
-const getSingleStudent = async(req, res) => {
+export const getSingleStudent = async(req, res) => {
     try {
         const {id} = req.params
         const getSingle = await studentModel.findById(id)
@@ -40,7 +40,7 @@ const getSingleStudent = async(req, res) => {
 }
 
 
-const updateStudent = async(req, res) => {
+export const updateStudent = async(req, res) => {
     try {
         const {id} = req.params
         const {Name} = req.body
@@ -59,7 +59,7 @@ const updateStudent = async(req, res) => {
 }
 
 
-const deleteStudent = async(req, res) => {
+export const deleteStudent = async(req, res) => {
     try {
         const {id} = req.params
         const eraseStudent = await studentModel.findByIdAndDelete(id)
@@ -74,5 +74,5 @@ const deleteStudent = async(req, res) => {
 }
 
 
-module.exports = {createStudent, getSingleStudent, updateStudent, deleteStudent}
+
 
