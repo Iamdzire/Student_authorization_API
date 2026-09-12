@@ -1,8 +1,9 @@
 import mongoose from 'mongoose'
 import express from 'express'
 import studentRoute from './routes/studentRoutes.js'
+import 'dotenv/config'
 
-const compass_string = "mongodb://localhost:27017/students_db"
+const compass_string = process.env.COMPASS_STRING
 
 const connection = () => mongoose.connect(compass_string)
 const onSuccess = () => console.log("Connected successfully")
